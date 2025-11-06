@@ -1,0 +1,86 @@
+Homework 5 
+Object Oriented Programming and File IO  
+The following problem set is worth 100 points.  Please submit a zip file containing all source code I need 
+to run your assignments using QtSPIM.  Code will be graded on elegance and correctness. 
+Problem 1: Set Program (40pts) 
+Create a class IntegerSet which can hold integers in the range from 0 to 100.  The set is represented 
+internally as an array of ones and zeroes.  Array element a[i] is 1 if the integer i is in the set.  Array 
+element a[i] is 0 if the integer i is not in the set.  The default constructor initializes the set to be the 
+“empty set”, a set whose array representation consists of all zeroes. 
+Include the following member set functions on your class: 
+Method Name Method Description 
+unionOf A method that creates a third set which is the 
+union of two set objects (e.g. an element in the 
+third set’s array is 1 if it is 1 in either of the arrays 
+of the two sets).  
+intersectionOf A method that creates a third set which is the 
+intersection of two set objects (e.g. an element in 
+the third set’s array is 1 if it is 1 in the array of 
+each set argument). 
+insertElement Inserts a new integer k into a set 
+deleteElement Removes an integer k from a set 
+printSet A method that prints a set with each element 
+separated by spaces 
+equals Used to compare two set objects for equality 
+In your main method create a number of sets and test each of the methods above.  Save your code in 
+set.asm. 
+Problem 2: Account Problem (30pts) 
+Create a class named SavingsAccount.  This class contains instance data such as the following: 
+Data Member Description 
+annualInterestRate Interest rate set for the account 
+savingsBalance The amount the account currently has on deposit 
+accountNumber Unique identifying number for the account 
+(integer) 
+Include the methods on your class 
+Method Name Description 
+calculateMonthlyInterest Multiplies the balance by the interest rate and 
+divides by 12 (this is then added to the balance) 
+setInterestRate Changes the value of the annual interest rate 
+printBalance Prints the balance on the account 
+In your main method, create two account objects, with balances of $2000.00 and $3000.00 respectively.  
+Set the annual interest rate to 3% on each account.  Then calculate the monthly interest rate and print 
+the new balances for each account.  Then set the interest rate to 4% on each account.  Print the new 
+monthly balances on each account.   
+Save your code in savingsAccount.asm. 
+Problem 3: File Problem (30pts) 
+Using the account code you created above, consider two text files: balances.txt and transactions.txt.  
+The balance text file looks like the following: 
+100 
+348.17 
+300 
+27.19 
+500 
+0.00 
+700 
+1000.00 
+The transaction text file looks like the following: 
+100 
+27.14 
+300 
+62.11 
+400 
+100.56 
+900 
+82.17 
+In a real-world environment, this file would be some delimited file (separated by commas, pipes, tabs, 
+etc.)  Since parsing a line is difficult to do with MIPS, the next best option is to read a text file line by line.  
+A record in either file is represented as a pair.  The first line in the pair is the account number and the 
+second line in the file is some amount.  In the balance file, the amount would be the initial value of the 
+account.  In the transaction file the amount would be the amount that is being deposited in the account. 
+For instance, if you see these two lines in the transaction file: 
+200 
+34.17 
+300 
+-14.40 
+Account 200 has $34.17 deposited in their account.  Account 300 has $14.40 withdrawn from their 
+account. 
+In your main method, use these two files in your main method as follows: 
+1. Create accounts for each record in balanaces.txt with initial values given 
+2. Set each annual interest rate to each account as 3% 
+3. Read each record in transactions.txt and debit or credit the account accordingly 
+4. Invoke the monthly interest method on each account 
+5. Print the balance of each account after the interest is applied 
+Save your solution in a file named savingsAccountFile.asm. 
+Submission Requirements 
+Please submit a zip file containing all source code I need for testing before the closing of the Canvas drop 
+box. 
